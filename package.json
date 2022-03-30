@@ -1,0 +1,25 @@
+{
+  "name": "chatbotbackendapp",
+  "version": "1.0.0",
+  "description": "Chatbot backend for python app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SJ-Corporation/ChatbotBackendApp.git"
+  },
+  "keywords": [
+    "Chatbot",
+    "python",
+    "backend",
+    "nodeJS"
+  ],
+  "author": "Jerish Bradly Bovas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SJ-Corporation/ChatbotBackendApp/issues"
+  },
+  "homepage": "https://github.com/SJ-Corporation/ChatbotBackendApp#readme"
+}
