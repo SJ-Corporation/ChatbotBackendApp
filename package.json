@@ -4,7 +4,8 @@
   "description": "Chatbot backend for python app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": ""
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/SJ-Corporation/ChatbotBackendApp/issues"
   },
-  "homepage": "https://github.com/SJ-Corporation/ChatbotBackendApp#readme"
+  "homepage": "https://github.com/SJ-Corporation/ChatbotBackendApp#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
