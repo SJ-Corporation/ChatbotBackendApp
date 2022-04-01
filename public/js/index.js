@@ -26,7 +26,7 @@ head.innerHTML += '<script src="https://kit.fontawesome.com/c11ddac06e.js" cross
 
 
 let chatButton = document.createElement('button')
-chatButton.innerHTML = '<i class="fas fa-solid fa-robot"></i>';
+chatButton.innerHTML = '<i class="fa-solid fa-robot"></i>';
 chatButton.setAttribute('id', 'chatButton');
 chatButton.position = 'absolute';
 chatButton.onclick = openChatbot

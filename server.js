@@ -31,7 +31,6 @@ app.post('/startchat', (req, res) => {
   let param = req.params;
   console.log(param);
   res.sendFile(path.join(__dirname + '/public/chatpage.html'));
-  startupEmit();
 })
 
 app.get('/startchat.css', (req, res) => {
@@ -59,10 +58,6 @@ io.on('connection', async (socket) => {
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
-  var startupEmit = () => {
-    socket.emit('chat reply', 'Hi, I\'m AskBot')
-    socket.emit('chat reply', 'How can I help you today?')
-  }
 });
 
 server.listen(process.env.PORT, () => {
