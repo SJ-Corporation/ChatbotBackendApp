@@ -18,19 +18,9 @@
     font-size: xx-large;
     color: black;
 }
-/* #footerContainer {
-    position: relative;
-    display: block;
-    width: 100%;
-    padding: 0;
-}
 #footerInput {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 100%;
     padding: 20px;
-} */
+}
 #footerInput Input {
     border-radius: 50px;
 }
@@ -39,8 +29,9 @@
 }
 #messageContainer {
     margin-top: 84px;
-    height: 500px;
+    height: 550px;
     padding: 20px;
+    overflow: scroll;
 }
 .userChat {
     margin: 5px 0;
