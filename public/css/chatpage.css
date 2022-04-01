@@ -18,7 +18,7 @@
     font-size: xx-large;
     color: black;
 }
-#footerContainer {
+/* #footerContainer {
     position: relative;
     display: block;
     width: 100%;
@@ -30,7 +30,7 @@
     bottom: 0;
     width: 100%;
     padding: 20px;
-}
+} */
 #footerInput Input {
     border-radius: 50px;
 }
@@ -39,10 +39,8 @@
 }
 #messageContainer {
     margin-top: 84px;
-    margin-bottom: 94px;
     height: 500px;
     padding: 20px;
-    background-color: rgba(253, 253, 253, 0.5);
 }
 .userChat {
     margin: 5px 0;
