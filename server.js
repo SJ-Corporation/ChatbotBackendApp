@@ -7,22 +7,34 @@ const {Server} = require("socket.io")
 const io = new Server(server);
 const axios = require('axios');
 require('dotenv').config()
-
-app.use(express.static(__dirname + '/public'));
+const path = require('path');
 
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/js/index.js');
-});
+app.get('/startup.js', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/js/index.js'));
+})
+
+app.get('/startup.css', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/css/style.css'));
+})
+
 app.get('/chatbot', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.post('/personal', (req, res) => {
+app.get('/chatbot.css', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/css/chatbot.css'));
+})
+
+app.post('/startchat', (req, res) => {
   let param = req.params;
   console.log(param);
-  res.sendFile(__dirname + '/public/chatpage.html');
+  res.sendFile(path.join(__dirname + '/public/chatpage.html'));
+})
+
+app.get('/startchat.css', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/css/chatpage.css'));
 })
 
 function delay(time) {
