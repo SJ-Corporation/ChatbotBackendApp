@@ -31,12 +31,20 @@
     width: 100%;
     padding: 20px;
 }
+#footerInput Input {
+    border-radius: 50px;
+}
+#inputChat {
+    border-radius: 50px;
+}
 #messageContainer {
-    margin-top: 94px;
-    margin-bottom: 94px;
+    margin-top: 84px;
+    margin-bottom: 84px;
+    height: 500px;
     padding: 20px;
 }
 .userChat {
+    margin: 5px 0;
     margin-left: auto;
     background-color: rgb(16, 148, 242);
     color: white;
@@ -46,6 +54,7 @@
     border-radius: 10px;
 }
 .botChat {
+    margin: 5px 0;
     background-color: rgb(238, 238, 238);
     padding: 5px 10px;
     width:max-content;

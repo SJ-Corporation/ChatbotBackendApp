@@ -36,9 +36,9 @@ function delay(time) {
 }
 
 io.on('connection', async (socket) => {
-  await delay(1500);
-  socket.emit('chat reply', 'Hi, It\'s AskBot')
-  await delay(1500);
+  await delay(1000);
+  socket.emit('chat reply', 'Hi, I\'m AskBot')
+  await delay(1000);
   socket.emit('chat reply', 'How can I help you today?')
   socket.on('chat message', (chat) => {
     let result = '';
