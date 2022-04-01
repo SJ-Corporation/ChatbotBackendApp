@@ -1,0 +1,51 @@
+*{box-sizing: border-box;}
+.circle {
+    background-image: linear-gradient(140deg, rgb(124, 223, 248) 50%, rgb(58, 121, 237));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+}
+#chatForm #close {
+    float: right;
+}
+#userImg{
+    margin: 10px;
+}
+#userImg div i{
+    font-size: xx-large;
+    color: black;
+}
+#titleMessage {
+    padding: 10px;
+    font-size: 18px;
+}
+.second-part {
+    padding: 30px;
+}
+.second-part span {
+    font-size: 17px;
+}
+.arrow {
+    border: solid rgb(11, 106, 240);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    }
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+.third-part {
+    padding: 30px;
+    text-align: center;
+}
+.third-part p {
+    font-size: 11px;
+    font-weight:500;
+    color: gray;
+}
+.third-part span {
+    font-size: 11px;
+    font-weight:500;
+    color: gray;
+}
