@@ -18,7 +18,7 @@ function closeChatbot(){
 let link = newE('link')
 link.rel = 'stylesheet';
 link.type = 'text/css';
-link.href = 'http://localhost:3001/style.css';
+link.href = 'http://localhost:3000/style.css';
 head.appendChild(link);
 
 head.innerHTML += '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></link>';
@@ -41,7 +41,7 @@ closeButton.className = 'btn-close'
 let iFrame = newE('iframe')
 iFrame.id = 'id-iframe';
 iFrame.className = 'id-iframe';
-iFrame.src = 'http://localhost:3001/chatbot';
+iFrame.src = 'http://localhost:3000/chatbot';
 
 let iCont = newE('div');
 iCont.id = 'it-if-iContainer'

@@ -31,8 +31,14 @@ app.post('/personal', (req, res) => {
   res.sendFile(__dirname + '/www/chatpage.html');
 })
 
-io.on('connection', (socket) => {
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+
+io.on('connection', async (socket) => {
+  await delay(1500);
   socket.emit('chat reply', 'Hi, It\'s AskBot')
+  await delay(1500);
   socket.emit('chat reply', 'How can I help you today?')
   socket.on('chat message', (chat) => {
     let result = '';
@@ -48,6 +54,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(3001, () => {
-  console.log('listening on *:3001');
+server.listen(3000, () => {
+  console.log('listening on *:3000');
 });

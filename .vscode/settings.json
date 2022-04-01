@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/ccf30051-b173-466b-b143-f9cd24d2d270/resourceGroups/chatbotreqresapppython/providers/Microsoft.Web/sites/chat-bot-web-app",
+    "appService.deploySubpath": "."
+}
