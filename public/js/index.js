@@ -29,7 +29,7 @@ chatButton.innerHTML = 'Ask Bot';
 chatButton.setAttribute('id', 'chatButton');
 chatButton.position = 'absolute';
 chatButton.onclick = openChatbot
-$('body').appendChild(chatButton);
+body.appendChild(chatButton);
 
 let closeButton = document.createElement('button');
 closeButton.id = "closeChatbot";
@@ -47,4 +47,4 @@ iCont.id = 'it-if-iContainer'
 iCont.className = 'iContainer';
 iCont.appendChild(iFrame)
 iCont.appendChild(closeButton)
-$('body').appendChild(iCont)
+body.appendChild(iCont)
