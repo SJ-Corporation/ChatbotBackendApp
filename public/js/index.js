@@ -18,7 +18,7 @@ function closeChatbot(){
 let link = newE('link')
 link.rel = 'stylesheet';
 link.type = 'text/css';
-link.href = '/www/css/style.css';
+link.href = 'css/style.css';
 head.appendChild(link);
 
 head.innerHTML += '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></link>';
@@ -41,7 +41,7 @@ closeButton.className = 'btn-close'
 let iFrame = newE('iframe')
 iFrame.id = 'id-iframe';
 iFrame.className = 'id-iframe';
-iFrame.src = 'https://chat-bot-web-app.azurewebsites.net/chatbot';
+iFrame.src = '/chatbot';
 
 let iCont = newE('div');
 iCont.id = 'it-if-iContainer'

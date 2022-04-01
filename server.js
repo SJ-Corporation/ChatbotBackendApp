@@ -8,28 +8,21 @@ const io = new Server(server);
 const axios = require('axios');
 require('dotenv').config()
 
+app.use(express.static(__dirname + '/public'));
+
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/www/js/index.js');
-});
-app.get('/style.css', (req, res) => {
-  res.sendFile(__dirname + '/www/css/style.css');
+  res.sendFile(__dirname + '/public/js/index.js');
 });
 app.get('/chatbot', (req, res) => {
-  res.sendFile(__dirname + '/www/index.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
-app.get('/chatbot.css', (req, res) => {
-  res.sendFile(__dirname + '/www/css/chatbot.css');
-});
-app.get('/chatpage.css', (req, res) => {
-  res.sendFile(__dirname + '/www/css/chatpage.css');
-})
 
 app.post('/personal', (req, res) => {
   let param = req.params;
   console.log(param);
-  res.sendFile(__dirname + '/www/chatpage.html');
+  res.sendFile(__dirname + '/public/chatpage.html');
 })
 
 function delay(time) {
