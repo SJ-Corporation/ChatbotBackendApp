@@ -21,6 +21,7 @@
 }
 .second-part {
     padding: 30px;
+    background-color: rgba(253, 253, 253, 0.9);
 }
 .second-part span {
     font-size: 17px;
@@ -38,6 +39,7 @@
 .third-part {
     padding: 30px;
     text-align: center;
+    background-color: rgba(253, 253, 253, 0.9);
 }
 .third-part p {
     font-size: 11px;
