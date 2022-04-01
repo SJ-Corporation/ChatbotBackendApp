@@ -6,6 +6,7 @@ const server = http.createServer(app);
 const {Server} = require("socket.io")
 const io = new Server(server);
 const axios = require('axios');
+require('dotenv').config()
 
 app.use(cors());
 
@@ -54,6 +55,6 @@ io.on('connection', async (socket) => {
   });
 });
 
-server.listen(3000, () => {
+server.listen(process.env.PORT, () => {
   console.log('listening on *:3000');
 });
