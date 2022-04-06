@@ -12,9 +12,8 @@ const languageCode = 'en'
 const client = new SessionsClient({apiEndpoint: 'northamerica-northeast1-dialogflow.googleapis.com',
                                     keyFilename: './src/config/named-flag-335620-45db76238eaa.json'});
 
-async function detectIntentText(query) {
+async function detectIntentText(query, sessionId) {
     let resultMessage = [];
-  const sessionId = Math.random().toString(36).substring(7);
   const sessionPath = client.projectLocationAgentSessionPath(
     projectId,
     location,
@@ -36,7 +35,7 @@ async function detectIntentText(query) {
   console.log(`User Query: ${query}`);
   for (const message of response.queryResult.responseMessages) {
     if (message.text) {
-        resultMessage.push(message.text.text);
+        resultMessage.push(message.text.text[0]);
       console.log(`Agent Response: ${message.text.text}`);
     }
   }

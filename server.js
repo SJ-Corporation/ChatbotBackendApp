@@ -48,20 +48,39 @@ io.on('connection', async (socket) => {
   await delay(1000);
   socket.emit('chat reply', 'How can I help you today?')
   socket.on('chat message', (chat) => {
-    const reply = dialogFlowService.detectIntentText(chat);
-    if(reply.length != 0){
-      reply.forEach(element => {
-        if(element != '')
-          socket.emit('chat reply', element)
-      });
-    }else{
+    dialogFlowService.detectIntentText(chat, socket.id).then(obj =>  {
+      if(obj.length != 0){
+        obj.forEach(async element => {
+          await delay(1000).then(() => {
+            if(element != ''){
+              socket.emit('chat reply', element)
+            }
+          })
+        });
+      }else{
+        axios.get('https://chatbot-req-res-app-python.azurewebsites.net/api/chatbottrigger?question='+chat)
+          .then(async res => {
+            await delay(1000).then(() => {
+              if(res.data != ''){
+                socket.emit('chat reply', res.data)
+              }
+            })
+          }).catch(err => {
+            console.log(err)
+          })
+      }
+    }).catch(err => {
       axios.get('https://chatbot-req-res-app-python.azurewebsites.net/api/chatbottrigger?question='+chat)
-        .then(res => {
-          socket.emit('chat reply', res.data)
-        }).catch(err => {
-          console.log(err)
-        })
-    }
+          .then(async res => {
+            await delay(1000).then(() => {
+              if(res.data != ''){
+                socket.emit('chat reply', res.data)
+              }
+            })
+          }).catch(err => {
+            console.log(err)
+          })
+    })
     
     
   })
