@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/SJ-Corporation/ChatbotBackendApp#readme",
   "dependencies": {
+    "@google-cloud/dialogflow-cx": "^2.15.0",
     "axios": "^0.26.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",

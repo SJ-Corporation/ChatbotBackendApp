@@ -8,6 +8,7 @@ const io = new Server(server);
 const axios = require('axios');
 require('dotenv').config()
 const path = require('path');
+const dialogFlowService = require('./src/services/dialogFlowService')
 
 app.use(cors());
 
@@ -47,13 +48,22 @@ io.on('connection', async (socket) => {
   await delay(1000);
   socket.emit('chat reply', 'How can I help you today?')
   socket.on('chat message', (chat) => {
-    let result = '';
-    axios.get('https://chatbot-req-res-app-python.azurewebsites.net/api/chatbottrigger?question='+chat)
+    const reply = dialogFlowService.detectIntentText(chat);
+    if(reply.length != 0){
+      reply.forEach(element => {
+        if(element != '')
+          socket.emit('chat reply', element)
+      });
+    }else{
+      axios.get('https://chatbot-req-res-app-python.azurewebsites.net/api/chatbottrigger?question='+chat)
         .then(res => {
           socket.emit('chat reply', res.data)
         }).catch(err => {
           console.log(err)
         })
+    }
+    
+    
   })
   socket.on('disconnect', () => {
     console.log('user disconnected');
