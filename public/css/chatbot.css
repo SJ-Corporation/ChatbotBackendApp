@@ -5,6 +5,9 @@
     border-top-right-radius: 10px;
     padding: 20px;
 }
+#chatForm {
+    background-color:rgb(240, 240, 240);
+}
 #chatForm #close {
     float: right;
 }
@@ -21,7 +24,6 @@
 }
 .second-part {
     padding: 30px;
-    background-color:rgb(240, 240, 240);
 }
 .second-part span {
     font-size: 17px;
@@ -39,7 +41,6 @@
 .third-part {
     padding: 30px;
     text-align: center;
-    background-color:rgb(240, 240, 240);
 }
 .third-part p {
     font-size: 11px;
