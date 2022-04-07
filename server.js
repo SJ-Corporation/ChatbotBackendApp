@@ -50,7 +50,7 @@ io.on('connection', async (socket) => {
   socket.emit('chat reply', 'How can I help you today?')
   socket.on('chat message', (chat) => {
     dialogFlowService.detectIntentText(chat, socket.id).then(obj =>  {
-      if(obj.length != 0){
+      if(false){
         obj.forEach(async element => {
           await delay(1000).then(() => {
             if(element != ''){
