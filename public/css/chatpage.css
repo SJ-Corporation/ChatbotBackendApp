@@ -39,22 +39,25 @@ body {
     padding: 20px;
     overflow: scroll;
     overflow-x: hidden;
+    background-color:rgb(245, 245, 245)
 }
 .userChat {
     margin: 5px 0;
     margin-left: auto;
-    background-color: rgb(16, 148, 242);
+    background-color: rgb(70, 70, 70);
     color: white;
-    padding: 5px 10px;
+    padding: 12px 15px;
     width:max-content;
-    max-width: 80%;
+    max-width: 90%;
     border-radius: 10px;
+    border-bottom-right-radius: 0;
 }
 .botChat {
     margin: 5px 0;
     background-color: rgb(238, 238, 238);
-    padding: 5px 10px;
+    padding: 12px 15px;
     width:max-content;
-    max-width: 80%;
+    max-width: 90%;
     border-radius: 10px;
+    border-bottom-left-radius: 0;
 }

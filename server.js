@@ -43,9 +43,10 @@ function delay(time) {
 }
 
 io.on('connection', async (socket) => {
-  await delay(1000);
-  socket.emit('chat reply', 'Hi, I\'m AskBot')
-  await delay(1000);
+  dialogFlowService.detectIntentText('Hi', socket.id);
+  await delay(500);
+  socket.emit('chat reply', 'Hi, I\'m your Virtual Assistant')
+  await delay(500);
   socket.emit('chat reply', 'How can I help you today?')
   socket.on('chat message', (chat) => {
     dialogFlowService.detectIntentText(chat, socket.id).then(obj =>  {

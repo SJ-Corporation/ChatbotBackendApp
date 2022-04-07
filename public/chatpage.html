@@ -31,7 +31,7 @@
         let firstTime = true;
         function Chat(userId, message) {
             let chat = document.createElement('p');
-            chat.className = userId;
+            chat.className = userId + ' shadow';
             chat.innerHTML = message;
             return chat;
         }
