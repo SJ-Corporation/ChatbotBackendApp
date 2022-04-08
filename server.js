@@ -51,16 +51,17 @@ io.on('connection', async (socket) => {
   socket.on('chat message', (chat) => {
     axios.get('https://chatbotprocessor.azurewebsites.net/api/chatbottrigger?question='+chat)
       .then(async res => {
-        resObj = JSON.parse(res.data)
+        resObj = res.data
         await delay(1000).then(async () => {
           if(resObj.answer != ''){
             socket.emit('chat reply', resObj.answer)
           }
           await delay(500).then(()=> {
-            socket.emit('choices', JSON.stringify(res.choices))
+            socket.emit('choices', JSON.stringify(resObj.choices))
           })
         })
       }).catch(err => {
+        console.log(err)
         dialogFlowService.detectIntentText(chat, socket.id)
         .then(obj =>  {
           obj.forEach(async element => {
