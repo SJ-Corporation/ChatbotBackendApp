@@ -39,6 +39,7 @@
             let but = document.createElement('button');
             but.className = "list-group-item list-group-item-action";
             but.type = "button";
+            but.addEventListener('click', getChat);
             but.innerHTML = content;
             return but;
         }
@@ -50,6 +51,11 @@
         var form = document.getElementById('footerInput');
         var input = document.getElementById('inputChat');
         var messages = document.getElementById('messageContainer');
+
+        function getChat(event){
+            let value = event.currentTarget.innerHTML
+            sendChat(value)
+        }
 
         function sendChat(value){
             if(document.getElementById('choicesbox')){
