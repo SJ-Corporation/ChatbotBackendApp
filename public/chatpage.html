@@ -35,13 +35,13 @@
             chat.innerHTML = message;
             return chat;
         }
-        function scroll(container){
-            if (firstTime) {
-                container.scrollTop = container.scrollHeight;
-                firstTime = false;
-                } else if (container.scrollTop + container.clientHeight === container.scrollHeight) {
-                container.scrollTop = container.scrollHeight;
-            }
+        function choiceButton(content){
+            let but = document.createElement('button');
+            but.className = "list-group-item list-group-item-action";
+            but.type = "button";
+            but.innerHTML = content;
+            but.onclick = sendChat(content);
+            return div;
         }
     </script>
     <script src="/socket.io/socket.io.js"></script>
@@ -52,22 +52,48 @@
         var input = document.getElementById('inputChat');
         var messages = document.getElementById('messageContainer');
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            if (input.value) {
+        function sendChat(value){
+            if(document.getElementById('choicesbox')){
+                messages.removeChild(document.getElementById('choicesbox'))
+            }
+            if (value) {
                 let chat = Chat('userChat', input.value);
                 messages.appendChild(chat);
                 messages.scrollTop = messages.scrollHeight;
                 socket.emit('chat message', input.value);
                 input.value = '';
             }
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            sendChat(input.value);
         });
         socket.on('chat reply', function(msg) {
             let chat = Chat('botChat', msg)
             messages.appendChild(chat);
             messages.scrollTop = messages.scrollHeight;
-            console.log(messages.scrollTop)
-            console.log(messages.scrollHeight)
+        });
+        socket.on('choices', function(msg) {
+            let msgArr = JSON.parse(msg);
+
+            let div = document.createElement('div');
+            div.className = 'list-group';
+            div.id = "choicesbox";
+
+            let headli = document.createElement('li');
+            headli.className = 'list-group-item disabled';
+            headli.innerHTML = "Select one of the choices below or type your own question";
+
+            div.appendChild(headli);
+
+            if(msgArr.length > 1){
+                msgArr.forEach(element => {
+                    div.appendChild(choiceButton(element));
+                });
+                messages.appendChild(div);
+            }
+            messages.scrollTop = messages.scrollHeight;
         });
     </script>
 </body>
