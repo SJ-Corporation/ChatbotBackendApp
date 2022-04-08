@@ -64,19 +64,18 @@
             if(document.getElementById('choicesbox')){
                 messages.removeChild(document.getElementById('choicesbox'))
             }
-            console.log("value" + value)
             if (value != '') {
-                let chat = Chat('userChat', input.value);
+                let chat = Chat('userChat', value);
                 messages.appendChild(chat);
                 messages.scrollTop = messages.scrollHeight;
-                socket.emit('chat message', input.value);
-                input.value = '';
+                socket.emit('chat message', value);
             }
         }
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             sendChat(input.value);
+            input.value = '';
         });
         socket.on('chat reply', function(msg) {
             let chat = Chat('botChat', msg)
