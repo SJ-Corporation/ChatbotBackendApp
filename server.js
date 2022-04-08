@@ -49,7 +49,7 @@ io.on('connection', async (socket) => {
   await delay(500);
   socket.emit('chat reply', 'How can I help you today?')
   socket.on('chat message', (chat) => {
-    axios.get('https://chatprocessorpython.azurewebsites.net/api/chatbottrigger?question='+chat)
+    axios.get('https://chatbotprocessor.azurewebsites.net/api/chatbottrigger?question='+chat)
       .then(async res => {
         resObj = JSON.parse(res.data)
         await delay(1000).then(async () => {
