@@ -64,6 +64,7 @@
             if(document.getElementById('choicesbox')){
                 messages.removeChild(document.getElementById('choicesbox'))
             }
+            console.log("value" + value)
             if (value != '') {
                 let chat = Chat('userChat', input.value);
                 messages.appendChild(chat);
