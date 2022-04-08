@@ -59,3 +59,10 @@ body {
     border-radius: 16px;
     border-bottom-left-radius: 0;
 }
+#choicesbox {
+    margin: 10px 0;
+    width:max-content;
+    max-width: 90%;
+    border-radius: 16px;
+    background-color: rgb(247, 247, 247);
+}
