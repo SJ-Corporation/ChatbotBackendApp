@@ -40,6 +40,7 @@
             but.className = "list-group-item list-group-item-action";
             but.type = "button";
             but.addEventListener('click', getChat);
+            but.attrib
             but.innerHTML = content;
             return but;
         }
@@ -53,7 +54,8 @@
         var messages = document.getElementById('messageContainer');
 
         function getChat(event){
-            let value = event.currentTarget.innerHTML
+            let value = event.currentTarget.innerText
+            console.log(event)
             sendChat(value)
         }
 
